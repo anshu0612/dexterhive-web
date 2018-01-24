@@ -26,10 +26,10 @@ export default class Widgets extends Component {
                     </a>
                 </li>
                 <li className="">
-                    <a>
+                    <Link to="/dashboard">
                         <DashBoard color = {blueGrey200} hoverColor={blueGrey50}/>
-                        <span className="widget-name"><Link to="/dashboard">Dashboard</Link></span>
-                    </a>
+                        <span className="widget-name">Dashboard</span>
+                    </Link>
                 </li>
                 <li className="">
                     <a>
@@ -45,10 +45,10 @@ export default class Widgets extends Component {
                     </a>
                 </li>
                 <li className="">
-                    <a>
+                    <Link to="/groups">
                         <Groups color = {blueGrey200} hoverColor={blueGrey50}/>
-                        <span className="widget-name"><Link to="/groups">Groups</Link></span>
-                    </a>
+                        <span className="widget-name">Groups</span>
+                    </Link>
                 </li>
             </ul>
     );

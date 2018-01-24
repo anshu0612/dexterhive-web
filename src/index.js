@@ -20,6 +20,15 @@ window.React = React;
 //https://github.com/zilverline/react-tap-event-plugin
 injectTapEventPlugin();
 
+let initialStoreData = {};
+
+try {
+    initialStoreData = initData;
+} catch (error) {
+    // Catch if initData is not defined
+    console.warn('No initial data found, moving on!');
+}
+
 const store = configureStore();
 
 /* History for navigation purpose */
@@ -38,3 +47,12 @@ const route = (
 )
 
 ReactDOM.render(route, document.getElementById('root'));
+
+
+export function getState() {
+    return store.getState();
+}
+
+export function dispatchAction(action) {
+    store.dispatch(action);
+}

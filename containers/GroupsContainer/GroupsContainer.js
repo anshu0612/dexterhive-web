@@ -6,8 +6,6 @@ import { connect } from 'react-redux';
 import Header from '../../components/Header/Header';
 import GroupsSection from '../../components/GroupsSection/GroupsSection';
 
-import * as TodoActions from '../../actions/todos';
-
 // For Customization Options, edit  or use
 // './src/material_ui_raw_theme_file.jsx' as a template.
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -47,5 +45,5 @@ function mapDispatchToProps(dispatch) {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+   // mapDispatchToProps
 )(GroupsContainer);

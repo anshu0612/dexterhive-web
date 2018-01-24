@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 // Components here
 import Header from '../../components/Header/Header';
 
-import * as TodoActions from '../../actions/todos';
+// Import actions
+import * as ActionCreators from '../../actions/tempAjaxAction';
 
 // For Customization Options, edit  or use
 // './src/material_ui_raw_theme_file.jsx' as a template.
@@ -18,13 +19,14 @@ require('./MainPageContainer.scss');
 
 class MainPageContainer extends Component {
     render() {
+
         const { todos, actions } = this.props;
         return (
             <MuiThemeProvider muiTheme={theme}>
                 <div className="groups-container">
                     <div className="rightsection-container">
                         <Header/>
-                        <DashboardSection/>
+                        <DashboardSection getRandomMessage={this.props.actions.getRandomMessage}/>
                     </div>
                 </div>
             </MuiThemeProvider>
@@ -41,7 +43,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators(TodoActions, dispatch)
+        actions: bindActionCreators({ ...ActionCreators }, dispatch)
     };
 }
 

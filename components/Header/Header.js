@@ -9,9 +9,7 @@ import Search from '../Search/Search';
 import Widgets from '../Widgets/Widgets';
 import {blueGrey300, blueGrey50} from 'material-ui/styles/colors';
 
-
 import DownArrowIcon from 'material-ui/svg-icons/navigation/arrow-drop-down';
-
 
 // Stylesheets
 require('./Header.scss');
@@ -33,11 +31,10 @@ class Header extends Component {
                     </div>
                     <Search/>
                     <Widgets/>
-
-                        <div className="profile-container">
-                            <Link to="/profile"><img src={profile}/></Link>
-                            <DownArrowIcon className="profile-dropdown-arrow" color={blueGrey300} hoverColor={blueGrey50}/>
-                        </div>
+                    <div className="profile-container">
+                        <Link to="/profile"><img src={profile}/></Link>
+                        <DownArrowIcon className="profile-dropdown-arrow" color={blueGrey300} hoverColor={blueGrey50}/>
+                    </div>
                 </div>
             </nav>
         );

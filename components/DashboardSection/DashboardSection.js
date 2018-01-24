@@ -14,7 +14,13 @@ import Divider from 'material-ui/Divider';
 require('./DashboardSection.scss');
 
 class DashboardSection extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
     render() {
+        console.log("what the heck", this.props);
         return (
             <div className="dashboard-section-wrapper">
                 <br/><br/>
@@ -36,6 +42,7 @@ class DashboardSection extends Component {
                 <SharedThoughts/>
                 <br/>
                 <SharedThoughts/>
+                <button onClick={this.props.getRandomMessage()}>CLICK ME</button>
             </div>
         );
     }
